@@ -90,7 +90,8 @@ class CheckoutViewModel: ObservableObject {
                     order: order,
                     restaurant: order.restaurant,
                     requestUtensils: utensilsRequested,
-                    deliveryLocation: DeliveryLocation(address: address, latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude),
+                    deliveryLocation: DeliveryLocation(address: address, latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude), 
+                    deliveryInstructions: deliveryInstructions,
                     contactPhoneNumber: contactPhoneNumber
                 )
                 

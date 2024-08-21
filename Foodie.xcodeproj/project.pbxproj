@@ -20,6 +20,8 @@
 		F134667C2C701A0800BEC748 /* SettingOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F134667B2C701A0800BEC748 /* SettingOptionsViewModel.swift */; };
 		F134667F2C701AF900BEC748 /* SettingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F134667E2C701AF800BEC748 /* SettingItemCell.swift */; };
 		F13466842C7160D000BEC748 /* AcceptDeliveriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13466832C7160D000BEC748 /* AcceptDeliveriesView.swift */; };
+		F18824A92C75C76A002FD1C1 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18824A82C75C76A002FD1C1 /* ProfileView.swift */; };
+		F18824AB2C75CB44002FD1C1 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F18824AA2C75CB44002FD1C1 /* ImagePicker.swift */; };
 		F188DB0F2C628E670004D3C1 /* FoodieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F188DB0E2C628E670004D3C1 /* FoodieApp.swift */; };
 		F188DB132C628E6A0004D3C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F188DB122C628E6A0004D3C1 /* Assets.xcassets */; };
 		F188DB162C628E6A0004D3C1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F188DB152C628E6A0004D3C1 /* Preview Assets.xcassets */; };
@@ -95,6 +97,8 @@
 		F134667B2C701A0800BEC748 /* SettingOptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingOptionsViewModel.swift; sourceTree = "<group>"; };
 		F134667E2C701AF800BEC748 /* SettingItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingItemCell.swift; sourceTree = "<group>"; };
 		F13466832C7160D000BEC748 /* AcceptDeliveriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptDeliveriesView.swift; sourceTree = "<group>"; };
+		F18824A82C75C76A002FD1C1 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		F18824AA2C75CB44002FD1C1 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		F188DB0B2C628E670004D3C1 /* Foodie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Foodie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F188DB0E2C628E670004D3C1 /* FoodieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodieApp.swift; sourceTree = "<group>"; };
 		F188DB122C628E6A0004D3C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 				F1C280FE2C6C097600F2CBAD /* ToastView.swift */,
 				F13466792C70176800BEC748 /* ProfileImageView.swift */,
 				F1C774A62C726338006BE89C /* RoundedCorner.swift */,
+				F18824AA2C75CB44002FD1C1 /* ImagePicker.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 			children = (
 				F134667D2C701AE700BEC748 /* Items */,
 				F13466772C70168100BEC748 /* SettingsView.swift */,
+				F18824A82C75C76A002FD1C1 /* ProfileView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -709,6 +715,7 @@
 				F1C280FD2C6B97FD00F2CBAD /* OrdersView.swift in Sources */,
 				F13466782C70168100BEC748 /* SettingsView.swift in Sources */,
 				F1D2A8AF2C6299F8008DF2CE /* User.swift in Sources */,
+				F18824AB2C75CB44002FD1C1 /* ImagePicker.swift in Sources */,
 				F1C280E22C668EF700F2CBAD /* Checkout.swift in Sources */,
 				F1C280EF2C67EE9C00F2CBAD /* MealDetailsScreen.swift in Sources */,
 				F1C280ED2C67EC4A00F2CBAD /* MealCard.swift in Sources */,
@@ -724,6 +731,7 @@
 				F1C281082C6C17FA00F2CBAD /* MapViewRepresentable.swift in Sources */,
 				F188DB0F2C628E670004D3C1 /* FoodieApp.swift in Sources */,
 				F1C774A32C7261A0006BE89C /* ToDeliveryLocationView.swift in Sources */,
+				F18824A92C75C76A002FD1C1 /* ProfileView.swift in Sources */,
 				F1D2A8C02C639DF2008DF2CE /* CustomProgressView.swift in Sources */,
 				F1C280F52C69097000F2CBAD /* Status.swift in Sources */,
 				F1C280F92C6A5C4900F2CBAD /* NavBarViewModel.swift in Sources */,

@@ -9,6 +9,7 @@ import SwiftUI
 import Firebase
 import FirebaseFirestore
 import FirebaseAuth
+import FirebaseStorage
 
 class AuthViewModel: ObservableObject {
     @Published var userSession: FirebaseAuth.User?
@@ -98,6 +99,14 @@ class AuthViewModel: ObservableObject {
         }
     }
     
+    func becomeADriver() {
+        guard let user = self.user else { return }
+        
+        var newUser = user
+        newUser.isDriver = true
+        self.uploadUserData(withUid: newUser.id, user: newUser)
+    }
+    
     func signOut() {
         do {
             try Auth.auth().signOut()
@@ -141,4 +150,52 @@ class AuthViewModel: ObservableObject {
         
         return userLocal
     }
-}
+    
+    func uploadProfileImage(_ image: UIImage, completion: @escaping (String?) -> Void) {
+        guard let uid = userSession?.uid else { return }
+
+        let storageRef = Storage.storage().reference().child("profile_images/\(uid).jpg")
+        guard let imageData = image.jpegData(compressionQuality: 0.5) else { return }
+
+        storageRef.putData(imageData, metadata: nil) { metadata, error in
+            if let error = error {
+                print("DEBUG: Failed to upload image with error: \(error.localizedDescription)")
+                completion(nil)
+                return
+            }
+
+            storageRef.downloadURL { url, error in
+                if let error = error {
+                    print("DEBUG: Failed to fetch download URL with error: \(error.localizedDescription)")
+                    completion(nil)
+                    return
+                }
+
+                guard let downloadURL = url?.absoluteString else {
+                    completion(nil)
+                    return
+                }
+
+                // Update the user object in Firestore
+                self.updateUserProfileImage(url: downloadURL) { success in
+                    completion(success ? downloadURL : nil)
+                }
+            }
+        }
+    }
+    
+    func changeUserFullName(_ newName: String) {
+        guard let currentUser = self.user else { return }
+        
+        var newUser = currentUser
+        newUser.fullname = newName
+        
+        self.uploadUserData(withUid: newUser.id, user: newUser)
+    }
+
+    private func updateUserProfileImage(url: String, completion: @escaping (Bool) -> Void) {
+        guard var currentUser = self.user else { return }
+        currentUser.profileImageUrl = url
+            uploadUserData(withUid: currentUser.id, user: currentUser)
+        }
+    }

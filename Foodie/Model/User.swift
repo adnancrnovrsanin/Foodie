@@ -10,7 +10,7 @@ import Firebase
 
 public struct User: Codable, Identifiable, Hashable {
     public var id: String
-    public let fullname: String
+    public var fullname: String
     public let email: String
     public var phoneNumber: String?
     public var profileImageUrl: String?

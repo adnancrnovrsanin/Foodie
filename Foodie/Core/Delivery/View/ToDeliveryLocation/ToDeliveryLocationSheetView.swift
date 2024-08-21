@@ -45,29 +45,31 @@ struct ToDeliveryLocationSheetView: View {
                     }
                     .padding(.horizontal, 10)
                     
-                    Rectangle()
-                        .listRowInsets(EdgeInsets())
-                        .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: 1)
-                        .foregroundStyle(Color.theme.primaryTextColor)
-                        .opacity(0.3)
-                    
-                    VStack(alignment: .leading, spacing: 10) {
-                        HStack {
-                            Text("Utensils:")
-                                .font(.caption)
-                                .foregroundStyle(Color.theme.primaryTextColor)
-                            
-                            Text("\(delivery.requestUtensils ? "Requested" : "Not requested")")
-                                .font(.body)
-                                .fontWeight(.semibold)
-                                .foregroundStyle(Color.theme.primaryTextColor)
-                            
-                            Spacer()
+                    if delivery.contactPhoneNumber.count > 0 {
+                        Rectangle()
+                            .listRowInsets(EdgeInsets())
+                            .frame(maxWidth: UIScreen.main.bounds.width, maxHeight: 1)
+                            .foregroundStyle(Color.theme.primaryTextColor)
+                            .opacity(0.3)
+                        
+                        VStack(alignment: .leading, spacing: 10) {
+                            HStack {
+                                Text("Contact phone number:")
+                                    .font(.caption)
+                                    .foregroundStyle(Color.theme.primaryTextColor)
+                                
+                                Text(delivery.contactPhoneNumber)
+                                    .font(.body)
+                                    .fontWeight(.semibold)
+                                    .foregroundStyle(Color.theme.primaryTextColor)
+                                
+                                Spacer()
+                            }
+                            .frame(maxWidth: .infinity)
                         }
                         .frame(maxWidth: .infinity)
+                        .padding(.horizontal, 10)
                     }
-                    .frame(maxWidth: .infinity)
-                    .padding(.horizontal, 10)
                     
                     if let deliveryInstructions = delivery.deliveryInstructions {
                         Rectangle()
